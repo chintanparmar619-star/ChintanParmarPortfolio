@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TVC Scripts — Chintan Parmar</title>
+<style>
+:root{--paper:#f7f5f0;--ink:#151515;--soft:#5b5954;--line:#d9d5cc;--page:min(1180px,calc(100% - 56px))}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.5}
+.wrap{width:var(--page);margin:auto}
+header{padding:24px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.brand{text-decoration:none;color:var(--ink);font-weight:800;letter-spacing:.01em}
+.back{text-decoration:none;color:var(--soft);font-size:13px}
+main{padding:78px 0 120px}
+.eyebrow{font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--soft)}
+h1{font-size:clamp(58px,9vw,116px);line-height:.9;letter-spacing:-.055em;margin:18px 0 26px;max-width:900px}
+.lead{max-width:680px;color:var(--soft);font-size:18px;margin:0 0 70px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.script-card{display:block;text-decoration:none;color:var(--ink);border:1px solid var(--line);padding:34px;min-height:280px;position:relative;transition:transform .2s ease,background .2s ease}
+.script-card:hover{transform:translateY(-3px);background:#efede7}
+.script-type{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--soft);font-weight:700}
+.script-card h2{font-size:clamp(28px,3vw,42px);line-height:1.02;letter-spacing:-.04em;max-width:520px;margin:70px 0 42px}
+.script-link{font-size:13px;font-weight:700}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--soft);font-size:12px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}main{padding-top:50px}.script-card{min-height:240px}.script-card h2{margin-top:55px}}
+</style>
+<style id="final-header-colour-fix">
+/* FINAL HEADER COLOUR FIX — preserve layout/content, unify page background */
+html, body {
+  background: #f7f5f0 !important;
+}
+header, nav, .header, .site-header, .navbar, .topbar, .top-bar {
+  background: #f7f5f0 !important;
+  background-color: #f7f5f0 !important;
+  color: #111111 !important;
+}
+header *, nav *, .header *, .site-header *, .navbar *, .topbar *, .top-bar * {
+  color: #111111 !important;
+}
+header a, nav a, .header a, .site-header a, .navbar a, .topbar a, .top-bar a {
+  color: #111111 !important;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="../index.html">CHINTAN PARMAR</a>
+  <a class="back" href="../index.html#work">← Work</a>
+</header>
+<main>
+  <span class="eyebrow">TVC Scripts</span>
+  <h1>Scripts written for the screen.</h1>
+  <p class="lead">Selected television and video commercial scripts, written and developed for brands and campaigns.</p>
+  <div class="grid">
+
+      <a class="script-card" href="Advertisement Fevikwik - Idea 3 .pdf" target="_blank" rel="noopener">
+        <div class="script-type">TVC SCRIPT · PDF</div>
+        <h2>Fevikwik — Idea 3 </h2>
+        <span class="script-link">Open script ↗</span>
+      </a>
+
+      <a class="script-card" href="Chintan - TVC Script for Waffers.pdf" target="_blank" rel="noopener">
+        <div class="script-type">TVC SCRIPT · PDF</div>
+        <h2>Kerala Kalling — Banana Wafers</h2>
+        <span class="script-link">Open script ↗</span>
+      </a>
+
+      <a class="script-card" href="Fevikwik Ghost Advert.pdf" target="_blank" rel="noopener">
+        <div class="script-type">TVC SCRIPT · PDF</div>
+        <h2>Fevikwik — Ghost Advert</h2>
+        <span class="script-link">Open script ↗</span>
+      </a>
+  </div>
+</main>
+<footer>© 2026 Chintan Parmar</footer>
+</div>
+</body>
+</html>

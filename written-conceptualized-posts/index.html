@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Written &amp; Conceptualised — Chintan Parmar</title>
+<style>
+  :root {
+    --bg:#0b0b0c; --panel:#131315; --text:#f4f3ef; --muted:#a8a6a0;
+    --line:#29292d; --accent:#d7ff4f;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:Arial, Helvetica, sans-serif; }
+  a { color:inherit; text-decoration:none; }
+  header { position:sticky; top:0; z-index:10; backdrop-filter:blur(14px); background:rgba(11,11,12,.82); border-bottom:1px solid var(--line); }
+  .nav { max-width:1280px; margin:auto; padding:18px 28px; display:flex; justify-content:space-between; align-items:center; }
+  .brand { font-weight:800; letter-spacing:-.04em; font-size:20px; }
+  .nav a { color:var(--muted); font-size:13px; }
+  main { max-width:1280px; margin:auto; padding:90px 28px 110px; }
+  .hero { max-width:900px; margin-bottom:70px; }
+  .kicker { color:var(--accent); text-transform:uppercase; letter-spacing:.16em; font-size:12px; font-weight:700; margin-bottom:20px; }
+  h1 { font-size:clamp(52px,8vw,112px); line-height:.9; letter-spacing:-.07em; margin:0 0 28px; }
+  .intro { color:var(--muted); font-size:18px; line-height:1.55; max-width:700px; }
+  .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:42px 28px; }
+  .work-card { min-width:0; }
+  .image-button { display:block; position:relative; width:100%; padding:0; border:0; background:var(--panel); cursor:pointer; overflow:hidden; }
+  .image-button img { display:block; width:100%; aspect-ratio:1/1; object-fit:cover; transition:transform .45s ease; }
+  .image-button:hover img { transform:scale(1.025); }
+  .view { position:absolute; right:16px; bottom:16px; padding:9px 12px; border-radius:999px; background:rgba(0,0,0,.72); color:white; font-size:12px; opacity:0; transition:opacity .25s ease; }
+  .image-button:hover .view { opacity:1; }
+  .card-copy { padding:18px 2px 0; }
+  .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.12em; font-size:10px; font-weight:700; }
+  h3 { margin:8px 0 8px; font-size:24px; letter-spacing:-.035em; }
+  .card-copy p { margin:0; color:var(--muted); line-height:1.5; font-size:14px; max-width:600px; }
+  footer { border-top:1px solid var(--line); color:var(--muted); padding:28px; max-width:1280px; margin:auto; font-size:12px; }
+  .modal { position:fixed; inset:0; z-index:30; display:none; place-items:center; padding:24px; background:rgba(0,0,0,.9); }
+  .modal.open { display:grid; }
+  .modal img { max-width:min(94vw,1100px); max-height:88vh; object-fit:contain; }
+  .close { position:fixed; top:20px; right:24px; border:1px solid #555; background:#111; color:#fff; border-radius:999px; width:42px; height:42px; cursor:pointer; font-size:22px; }
+  @media (max-width:800px) {
+    main { padding:60px 18px 80px; }
+    .nav { padding:16px 18px; }
+    .grid { grid-template-columns:1fr; gap:34px; }
+    h1 { font-size:64px; }
+  }
+</style>
+
+<style id="written-gallery-fix">
+html,body{background:#f7f5f0!important;color:#171717!important}
+body{font-family:Arial,Helvetica,sans-serif!important}
+a{color:inherit}
+main,.wrap,.container{background:#f7f5f0!important;color:#171717!important}
+img{opacity:1!important;visibility:visible!important;display:block}
+.written-gallery,.grid,.posts-grid,.work-grid{background:#f7f5f0!important}
+.written-gallery img,.grid img,.posts-grid img,.work-grid img{width:100%!important;height:auto!important;object-fit:cover!important;opacity:1!important;visibility:visible!important}
+.work-card,.post-card,.card{background:#fff!important;color:#171717!important}
+.kicker,.eyebrow,.meta{color:#555!important}
+
+<style id="visibility-fix">
+html,body{background:#f7f5f0!important;color:#151515!important}
+img{display:block!important;visibility:visible!important;opacity:1!important}
+</style>
+<style id="final-header-colour-fix">
+/* FINAL HEADER COLOUR FIX — preserve layout/content, unify page background */
+html, body {
+  background: #f7f5f0 !important;
+}
+header, nav, .header, .site-header, .navbar, .topbar, .top-bar {
+  background: #f7f5f0 !important;
+  background-color: #f7f5f0 !important;
+  color: #111111 !important;
+}
+header *, nav *, .header *, .site-header *, .navbar *, .topbar *, .top-bar * {
+  color: #111111 !important;
+}
+header a, nav a, .header a, .site-header a, .navbar a, .topbar a, .top-bar a {
+  color: #111111 !important;
+}
+</style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <div class="brand">CHINTAN PARMAR</div>
+    <a href="../index.html#work">← Back to Work</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="kicker">02 / Work by type</div>
+    <h1>Written &amp;<br>Conceptualised.</h1>
+    <p class="intro">Selected brand and social creatives developed through concept thinking and copywriting. The work spans consumer technology, security, healthcare and festive campaigns.</p>
+  </section>
+
+  <section class="grid">
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open Visonic MP902" src="../assets/written-conceptualised/1379.PNG">
+          <img src="../assets/written-conceptualised/1379.PNG" alt="Visonic MP902" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Product campaign creative</div>
+          <h3>Visonic MP902</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open Electro-Voice Portable Column Speaker" src="../assets/written-conceptualised/1381.PNG">
+          <img src="../assets/written-conceptualised/1381.PNG" alt="Electro-Voice Portable Column Speaker" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Product campaign creative</div>
+          <h3>Electro-Voice Portable Column Speaker</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open Crestron Horizon Designer Keypads" src="../assets/written-conceptualised/1382.PNG">
+          <img src="../assets/written-conceptualised/1382.PNG" alt="Crestron Horizon Designer Keypads" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Product campaign creative</div>
+          <h3>Crestron Horizon Designer Keypads</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open Visonic PowerMaster 33" src="../assets/written-conceptualised/19072023_01.jpg">
+          <img src="../assets/written-conceptualised/19072023_01.jpg" alt="Visonic PowerMaster 33" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Security solutions campaign</div>
+          <h3>Visonic PowerMaster 33</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open MySpine Clinic — Upside Down" src="../assets/written-conceptualised/1000007981.JPG">
+          <img src="../assets/written-conceptualised/1000007981.JPG" alt="MySpine Clinic — Upside Down" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Health awareness creative</div>
+          <h3>MySpine Clinic — Upside Down</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open MySpine Clinic — 10 Seconds" src="../assets/written-conceptualised/1000007983.JPG">
+          <img src="../assets/written-conceptualised/1000007983.JPG" alt="MySpine Clinic — 10 Seconds" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Health awareness creative</div>
+          <h3>MySpine Clinic — 10 Seconds</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open MySpine Clinic — Excess Weight" src="../assets/written-conceptualised/1000007986.JPG">
+          <img src="../assets/written-conceptualised/1000007986.JPG" alt="MySpine Clinic — Excess Weight" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Health awareness creative</div>
+          <h3>MySpine Clinic — Excess Weight</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open MySpine Clinic — Bad Posture" src="../assets/written-conceptualised/1000007987.JPG">
+          <img src="../assets/written-conceptualised/1000007987.JPG" alt="MySpine Clinic — Bad Posture" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Health awareness creative</div>
+          <h3>MySpine Clinic — Bad Posture</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open MySpine Clinic — Smoking" src="../assets/written-conceptualised/1000007988.JPG">
+          <img src="../assets/written-conceptualised/1000007988.JPG" alt="MySpine Clinic — Smoking" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Health awareness creative</div>
+          <h3>MySpine Clinic — Smoking</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open JBL — Desired World" src="../assets/written-conceptualised/1000008572.JPG">
+          <img src="../assets/written-conceptualised/1000008572.JPG" alt="JBL — Desired World" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Consumer electronics campaign</div>
+          <h3>JBL — Desired World</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open JBL — Raising the Bar" src="../assets/written-conceptualised/1000008574.JPG">
+          <img src="../assets/written-conceptualised/1000008574.JPG" alt="JBL — Raising the Bar" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Consumer electronics campaign</div>
+          <h3>JBL — Raising the Bar</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open LG — Stay Fresh &amp; Protected" src="../assets/written-conceptualised/image.png">
+          <img src="../assets/written-conceptualised/image.png" alt="LG — Stay Fresh &amp; Protected" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Consumer electronics campaign</div>
+          <h3>LG — Stay Fresh &amp; Protected</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open TCL — Uttaryayan" src="../assets/written-conceptualised/IMG_4404.jpg">
+          <img src="../assets/written-conceptualised/IMG_4404.jpg" alt="TCL — Uttaryayan" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Festive campaign</div>
+          <h3>TCL — Uttaryayan</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open JBL by Harman — Uplift Your Celebration" src="../assets/written-conceptualised/IMG_4406.jpg">
+          <img src="../assets/written-conceptualised/IMG_4406.jpg" alt="JBL by Harman — Uplift Your Celebration" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Festive campaign</div>
+          <h3>JBL by Harman — Uplift Your Celebration</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open Tyco Illustra — Box Camera" src="../assets/written-conceptualised/IMG_4410.jpg">
+          <img src="../assets/written-conceptualised/IMG_4410.jpg" alt="Tyco Illustra — Box Camera" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Security technology campaign</div>
+          <h3>Tyco Illustra — Box Camera</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+      <article class="work-card">
+        <button class="image-button" type="button" aria-label="Open JBL — Raising the Bar (alternate)" src="../assets/written-conceptualised/Screenshot_2023-02-21-19-31-21-59_1c337646f29875672b5a61192b9010f9.jpg">
+          <img src="../assets/written-conceptualised/Screenshot_2023-02-21-19-31-21-59_1c337646f29875672b5a61192b9010f9.jpg" alt="JBL — Raising the Bar (alternate)" loading="lazy">
+          <span class="view">View</span>
+        </button>
+        <div class="card-copy">
+          <div class="eyebrow">Consumer electronics campaign</div>
+          <h3>JBL — Raising the Bar (alternate)</h3>
+          <p>Concept + copy — social/brand creative developed around the product, audience and campaign message.</p>
+        </div>
+      </article>
+    
+  </section>
+</main>
+
+<footer>
+  Written &amp; Conceptualised — selected creative work
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button class="close" id="close" aria-label="Close">×</button>
+  <img id="modalImage" src="" alt="">
+</div>
+
+<script>
+  const modal = document.getElementById('modal');
+  const modalImage = document.getElementById('modalImage');
+  document.querySelectorAll('.image-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      modalImage.src = btn.dataset.image;
+      modalImage.alt = btn.querySelector('img').alt;
+      modal.classList.add('open');
+    });
+  });
+  function closeModal() {
+    modal.classList.remove('open');
+    modalImage.src = '';
+  }
+  document.getElementById('close').addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>

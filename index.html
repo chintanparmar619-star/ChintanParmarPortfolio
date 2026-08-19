@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Chintan Parmar — content strategist, copywriter and storyteller.">
+  <title>Chintan Parmar — Content strategist & storyteller</title>
+  <style>
+    :root {
+      --paper: #fdfdfc;
+      --ink: #11110f;
+      --soft-ink: #51514d;
+      --faint: #ecece7;
+      --line: #d9d9d2;
+      --sand: #b8af9f;
+      --moss: #5c6257;
+      --card: #f4f3ef;
+      --radius: 22px;
+      --page: min(1440px, calc(100% - 64px));
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.45;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      opacity: .18;
+      pointer-events: none;
+      z-index: 20;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+    }
+    a { color: inherit; }
+    button { font: inherit; }
+    img { display: block; max-width: 100%; }
+    .page { width: var(--page); margin: 0 auto; }
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .dot { color: var(--sand); }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 10;
+      padding: 18px 0;
+      background: color-mix(in srgb, var(--paper) 88%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s ease, padding .25s ease;
+    }
+    .site-header.scrolled { border-bottom-color: var(--line); padding: 13px 0; }
+    .nav {
+      width: var(--page);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 24px;
+    }
+    .brand { text-decoration: none; display: inline-flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 750; letter-spacing: -.03em; }
+    .brand-mark { width: 21px; height: 21px; display: grid; place-items: center; background: var(--ink); color: white; border-radius: 50%; font-size: 8px; letter-spacing: -.08em; }
+    .nav-links { display: flex; gap: 23px; }
+    .nav-links a, .nav-meta { color: var(--soft-ink); font-size: 12px; text-decoration: none; }
+    .nav-links a { transition: color .2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-meta { justify-self: end; display: flex; align-items: center; gap: 16px; }
+    .nav-meta .time { font-variant-numeric: tabular-nums; }
+    .small-button, .nav-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      padding: 9px 15px;
+      color: var(--ink);
+      background: transparent;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 650;
+      transition: background .2s, color .2s, transform .2s;
+    }
+    .small-button:hover, .nav-button:hover { background: var(--ink); color: white; transform: translateY(-1px); }
+
+    .hero { position: relative; min-height: 820px; padding: 116px 0 58px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+    .hero > *:not(.hero-image) { position: relative; z-index: 1; }
+    .hero-image {
+      position: absolute;
+      z-index: 0;
+      top: 105px;
+      right: -32px;
+      width: min(46vw, 720px);
+      height: 660px;
+      background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXGhAI0_SfsC5y4a1UHV6-YyUmls2nU-AaJkgj-aet8431y-WLqF6oB-PXlvApfdO7m8cZaL5RvBgIzKyTQT7lhnEYkM0BnzxCbgi0mWcADbVdoKB8ThelSsJS6syaFLn_vt4LjfnOrb3ng67fQ92Ao_YjyBIQLYg1gQBBP5B0Zqw3Lck5DpcXxoHAzgaUyF19EeemVX6r39p2q-QjwGyLLtZKpW-cJNbIV609a3RY0ZqA4Ezc5JClNf6TnnDLsuBn-sLIjLIsMiU') center / cover no-repeat;
+      filter: grayscale(1) contrast(1.04);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.18) 21%, #000 47%, #000 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.18) 21%, #000 47%, #000 100%);
+    }
+    .hero-content { position: relative; margin: auto 0 48px; }
+    .hero h1 { max-width: min(720px, 58vw); margin: 0; font-weight: 450; font-size: clamp(62px, 7.4vw, 125px); letter-spacing: -.087em; line-height: .85; }
+    .hero h1 em { color: var(--sand); font-style: normal; }
+    .hero-bottom { display: grid; grid-template-columns: 1.2fr .8fr; align-items: end; gap: 48px; margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--line); }
+    .hero-bottom p { max-width: 400px; margin: 0; font-size: 15px; color: var(--soft-ink); }
+    .hero-bottom .arrow-link { justify-self: end; }
+    .arrow-link { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; font-size: 13px; font-weight: 650; }
+    .arrow { display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid var(--ink); border-radius: 50%; font-size: 18px; transition: transform .2s, background .2s, color .2s; }
+    .arrow-link:hover .arrow { transform: translateY(3px); background: var(--ink); color: white; }
+
+    section { scroll-margin-top: 80px; }
+    .intro { display: grid; grid-template-columns: minmax(180px, .5fr) 1.55fr; gap: 32px; padding: 134px 0 150px; }
+    .intro-copy { max-width: 720px; margin: 0; font-size: clamp(33px, 4.2vw, 61px); line-height: .94; letter-spacing: -.072em; }
+    .intro-copy strong { font-weight: 460; color: var(--moss); }
+    .intro-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 38px; max-width: 530px; }
+    .intro-stat { padding-top: 14px; border-top: 1px solid var(--line); }
+    .intro-stat b { display: block; font-size: clamp(25px, 2.6vw, 38px); font-weight: 450; letter-spacing: -.06em; line-height: .92; }
+    .intro-stat span { display: block; margin-top: 7px; color: var(--soft-ink); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+
+    .section-top { display: flex; justify-content: space-between; gap: 32px; align-items: flex-end; margin-bottom: 58px; }
+    .section-title { margin: 9px 0 0; font-size: clamp(44px, 5.8vw, 87px); line-height: .87; letter-spacing: -.08em; font-weight: 450; }
+    .section-copy { width: min(306px, 100%); margin: 0; color: var(--soft-ink); font-size: 14px; }
+
+    .work { padding: 0 0 160px; }
+    .filter:hover, .project:hover { transform: translateY(-5px); box-shadow: 0 19px 42px rgba(19,19,14,.1); }
+    .project:nth-child(3n) { grid-column: span 2; min-height: 550px; }
+    .project.hidden { display: none; }
+    .project:hover .project-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 44%, rgba(20,20,15,.2)); pointer-events: none; }
+    .project-action:hover { background: var(--ink); color: white; transform: rotate(-45deg); }
+    .work-note { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin-top: 30px; padding-top: 23px; border-top: 1px solid var(--line); color: var(--soft-ink); font-size: 13px; }
+
+    .capabilities { padding: 0 0 158px; }
+    .skills { border-top: 1px solid var(--line); }
+    .skill { display: grid; grid-template-columns: 72px 1fr auto; align-items: center; gap: 28px; min-height: 100px; border-bottom: 1px solid var(--line); text-decoration: none; transition: padding .25s ease, background .25s ease; }
+    .skill:hover { padding: 0 18px; background: var(--card); }
+    .skill .skill-no { color: var(--soft-ink); font-size: 12px; }
+    .skill h3 { margin: 0; font-size: clamp(27px, 3.4vw, 51px); font-weight: 450; line-height: .85; letter-spacing: -.07em; }
+    .skill p { width: 255px; margin: 0; color: var(--soft-ink); font-size: 13px; }
+    .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 27px; }
+    .tool { padding: 9px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--soft-ink); font-size: 12px; }
+
+    .experience { padding: 0 0 160px; }
+    .experience-list { border-top: 1px solid var(--line); }
+    .role { border-bottom: 1px solid var(--line); }
+    .role-row { display: grid; grid-template-columns: .7fr 1.15fr 1fr 42px; align-items: center; gap: 20px; padding: 23px 0; }
+    .role-type, .role-period { color: var(--soft-ink); font-size: 12px; }
+    .role h3 { margin: 0; font-size: clamp(19px, 2vw, 27px); font-weight: 470; letter-spacing: -.05em; }
+    .role-toggle { width: 34px; height: 34px; justify-self: end; display: grid; place-items: center; padding: 0; border: 1px solid var(--ink); border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer; }
+    .role-toggle:hover { background: var(--ink); color: var(--paper); }
+    .role-icon { display: block; font-size: 21px; line-height: 1; font-weight: 300; transition: transform .25s; }
+    .role.open .role-icon { transform: rotate(45deg); }
+    .role-detail { display: grid; grid-template-columns: .7fr 2.15fr; gap: 20px; max-height: 0; overflow: hidden; opacity: 0; transition: max-height .45s ease, opacity .2s ease; }
+    .role.open .role-detail { max-height: 1800px; opacity: 1; }
+    .role-detail div { grid-column: 2; padding: 0 48px 29px 0; }
+    .role-detail ul { margin: 0; padding-left: 18px; color: var(--soft-ink); font-size: 14px; line-height: 1.55; }
+    .role-detail li + li { margin-top: 7px; }
+    .role-detail p { margin: 16px 0 0; font-size: 12px; font-weight: 650; color: var(--ink); }
+
+
+    .tools-showcase { padding: 0 0 160px; }
+    .tools-list { border-top: 1px solid var(--line); }
+    .tool-group { display: grid; grid-template-columns: 60px 1fr; gap: 20px; padding: 25px 0; border-bottom: 1px solid var(--line); }
+    .tool-group > span { color: var(--soft-ink); font-size: 12px; }
+    .tool-group h3 { margin: 0 0 10px; font-size: clamp(24px, 3vw, 40px); font-weight: 450; letter-spacing: -.06em; line-height: .9; }
+    .tool-group p { margin: 0; max-width: 900px; color: var(--soft-ink); font-size: 14px; line-height: 1.6; }
+
+    .credentials { padding: 0 0 160px; }
+    .credential-list { border-top: 1px solid var(--line); }
+    .credential { display: grid; grid-template-columns: .7fr 1.15fr 1fr; align-items: center; gap: 20px; min-height: 76px; border-bottom: 1px solid var(--line); }
+    .credential-type, .credential-meta { color: var(--soft-ink); font-size: 12px; }
+    .credential h3 { margin: 0; font-size: clamp(18px, 2vw, 26px); font-weight: 470; letter-spacing: -.05em; }
+
+    .contact { padding: 118px 0 37px; border-top: 1px solid var(--line); }
+    .contact h2 { max-width: 900px; margin: 15px 0 40px; font-size: clamp(62px, 10.5vw, 153px); line-height: .82; font-weight: 450; letter-spacing: -.09em; }
+    .contact h2 em { color: var(--sand); font-style: normal; }
+    .contact-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; padding-top: 25px; border-top: 1px solid var(--line); }
+    .contact-bottom p { max-width: 340px; margin: 0; color: var(--soft-ink); font-size: 14px; }
+    .contact-actions { display: flex; align-items: center; gap: 12px; }
+    .email-link { display: inline-flex; align-items: center; gap: 14px; font-size: clamp(15px, 2vw, 22px); font-weight: 600; letter-spacing: -.04em; text-decoration: none; border-bottom: 1px solid var(--ink); }
+    .linkedin-link { display: grid; flex: 0 0 auto; width: 39px; height: 39px; place-items: center; border: 1px solid var(--ink); border-radius: 50%; transition: background .2s, color .2s, transform .2s; }
+    .linkedin-link:hover { color: white; background: var(--ink); transform: translateY(-2px); }
+    .linkedin-link svg { width: 17px; height: 17px; fill: currentColor; }
+    .footer { display: flex; justify-content: space-between; gap: 24px; padding: 26px 0 32px; color: var(--soft-ink); font-size: 11px; }
+
+    [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
+    [data-reveal].visible { opacity: 1; transform: none; }
+
+    @media (max-width: 780px) {
+      :root { --page: min(100% - 34px, 1440px); }
+      .nav { grid-template-columns: 1fr auto; }
+      .nav-links { display: none; }
+      .nav-meta .time { display: none; }
+      .hero { min-height: 700px; padding-top: 100px; }
+      .hero-image { top: 84px; right: -17px; width: 62vw; height: 505px; opacity: .88; -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.15) 26%, #000 57%); mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.15) 26%, #000 57%); }
+      .hero-content { margin-bottom: 34px; }
+      .hero h1 { font-size: clamp(58px, 15vw, 100px); }
+      .hero-bottom, .intro { grid-template-columns: 1fr; }
+      .hero-bottom .arrow-link { justify-self: start; }
+      .intro { gap: 28px; padding: 110px 0; }
+      .intro-stats { margin-top: 28px; }
+      .section-top { display: block; margin-bottom: 38px; }
+      .section-copy { margin-top: 21px; }
+      .project, .project:nth-child(3n) { min-height: 470px; grid-column: auto; }
+      .work, .capabilities, .experience { padding-bottom: 112px; }
+      .story-copy { padding: 29px; }
+      .story-copy blockquote { margin: 50px 0; }
+      .skill { grid-template-columns: 44px 1fr 24px; gap: 11px; min-height: 84px; }
+      .skill p { display: none; }
+      .skill::after { content: '↗'; font-size: 15px; }
+      .role-row { grid-template-columns: 1fr 42px; gap: 8px; padding: 19px 0; }
+      .role-type { grid-column: 1; grid-row: 1; }
+      .role h3 { grid-column: 1; grid-row: 2; margin: 4px 0; }
+      .role-period { grid-column: 1; grid-row: 3; }
+      .role-toggle { grid-column: 2; grid-row: 1 / span 3; }
+      .role-detail { grid-template-columns: 1fr; }
+      .role-detail div { grid-column: 1; padding: 0 10px 27px 0; }
+      .tools-showcase { padding-bottom: 112px; }
+      .tool-group { grid-template-columns: 40px 1fr; gap: 10px; }
+      .tool-group h3 { font-size: 30px; }
+      .credential { grid-template-columns: 1fr; gap: 3px; padding: 18px 0; }
+      .contact { padding-top: 83px; }
+      .contact-bottom, .footer { display: block; }
+      .contact-actions { margin-top: 27px; }
+      .footer p + p { margin-top: 10px; }
+    }
+.hero { position: relative; }
+
+
+@media (max-width: 760px) {
+}
+
+
+/* LinkedIn above email, right aligned */
+.contact-linkedin-above{display:flex;justify-content:flex-end;margin-bottom:10px}
+.contact-linkedin-above a{width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--ink);border-radius:50%;color:var(--ink);text-decoration:none}
+.contact-linkedin-above svg{width:16px;height:16px;fill:currentColor}
+.contact-linkedin-above a:hover{background:var(--ink);color:var(--paper)}
+
+
+.resume-link{margin-right:10px}
+.ai-note{max-width:760px;margin:34px 0 18px;color:var(--soft-ink);font-size:13px;line-height:1.55}
+
+
+.email-icon-link{width:34px;height:34px;display:grid;place-items:center;color:var(--ink);border:1px solid var(--ink);border-radius:50%;text-decoration:none;transition:background .2s,color .2s,transform .2s}
+.email-icon-link svg{width:16px;height:16px;fill:currentColor}
+.email-icon-link:hover{background:var(--ink);color:var(--paper);transform:translateY(-1px)}
+
+
+/* Contact icons: identical size and footprint */
+.email-icon-link,
+.linkedin-link {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px;
+  min-height: 34px;
+  display: grid !important;
+  place-items: center;
+  box-sizing: border-box;
+}
+.email-icon-link svg,
+.linkedin-link svg {
+  width: 16px !important;
+  height: 16px !important;
+  display: block;
+}
+
+.intro-main { min-width: 0; }
+.intro-copy {
+  max-width: 720px;
+  margin: 0;
+  font-size: clamp(33px, 4.2vw, 61px);
+  line-height: .96;
+  letter-spacing: -.072em;
+  font-weight: 500;
+}
+.intro-body {
+  max-width: 720px;
+  margin: 28px 0 0;
+  color: var(--soft-ink);
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: -.01em;
+}
+
+
+@media (max-width: 780px) {
+  .intro-copy { font-size: clamp(38px, 10vw, 58px); line-height: .96; }
+  .intro-body { margin-top: 24px; font-size: 15px; line-height: 1.6; }
+  .intro-stats { margin-top: 30px; }
+}
+
+
+/* Work by type */
+.work-category { margin-top: 78px; }
+.work-category + .work-category { margin-top: 88px; }
+.work-category-title {
+  margin: 0 0 24px;
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.work-grid {
+  display: grid;
+  gap: 24px;
+}
+.work-grid-case { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.work-grid-posts { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.work-grid-scripts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.work-grid-videos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.work-card {
+  display: block;
+  min-width: 0;
+  color: var(--ink);
+  text-decoration: none;
+}
+.work-card-image {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: var(--line);
+}
+.work-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), opacity .3s ease;
+}
+.work-card:hover .work-card-image img {
+  transform: scale(1.05);
+}
+.work-card-title {
+  margin: 12px 0 0;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -.025em;
+}
+.work-empty span {
+  font-size: 15px;
+  font-weight: 600;
+}
+.work-empty p {
+  margin: 6px 0 0;
+  font-size: 13px;
+}
+@media (max-width: 1023px) {
+  .work-grid-posts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .work-grid-videos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 780px) {
+  .work-category { margin-top: 58px; }
+  .work-category + .work-category { margin-top: 64px; }
+  .work-grid-case,
+  .work-grid-scripts { grid-template-columns: 1fr; }
+  .work-grid-posts,
+  .work-grid-videos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .work-card-title { font-size: 16px; }
+}
+@media (max-width: 520px) {
+  .work-grid-posts,
+  .work-grid-videos { grid-template-columns: 1fr; }
+}
+
+
+/* Reveal fallback */
+[data-reveal] { opacity: 1; transform: none; }
+[data-reveal].visible { opacity: 1; transform: none; }
+
+
+.work-category-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:76px}
+.work-category-tile{display:block;color:var(--ink);text-decoration:none}
+.work-category-tile-image{position:relative;overflow:hidden;aspect-ratio:16/10;background:var(--line)}
+.work-category-tile-image img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .3s ease}
+.work-category-tile:hover .work-category-tile-image img{transform:scale(1.05)}
+.work-category-number{position:absolute;left:14px;top:14px;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--paper);color:var(--ink);font-size:11px;font-weight:700}
+.work-category-tile h3{margin:14px 0 0;max-width:360px;font-size:19px;line-height:1.25;font-weight:500;letter-spacing:-.025em}
+@media(max-width:1023px){.work-category-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:780px){.work-category-tiles{grid-template-columns:1fr;gap:32px;margin-top:58px}}
+
+.hero-bottom
+@media (max-width: 780px) {
+  .hero-bottom
+}
+
+.hero-bottom
+.hero-bottom
+@media (max-width: 780px) {
+  .hero-bottom
+}
+
+.hero-bottom {
+  text-align: left;
+}
+.hero-bottom
+@media (max-width: 780px) {
+  .hero-bottom
+}
+
+.hero {
+  position: relative;
+}
+.hero-bottom
+.hero-bottom {
+  position: static !important;
+}
+@media (max-width: 780px) {
+  .hero-bottom
+}
+
+
+.section-visuals{display:grid;grid-template-columns:1.35fr .82fr .82fr;gap:14px;margin:28px 0 0}
+.section-visual{position:relative;overflow:hidden;aspect-ratio:16/9;border-radius:18px;background:var(--card)}
+.section-visual.tall{aspect-ratio:4/5}
+.section-visual img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.section-visual:hover img{transform:scale(1.04)}
+.section-visual figcaption{position:absolute;left:12px;bottom:12px;padding:7px 10px;border-radius:999px;background:rgba(253,253,252,.9);color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.case-study-callout{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:34px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.case-study-callout p{margin:0;max-width:620px;color:var(--soft-ink);font-size:14px}
+.case-study-callout a{white-space:nowrap}
+@media(max-width:780px){.section-visuals{grid-template-columns:1fr 1fr}.section-visual:first-child{grid-column:span 2}.case-study-callout{align-items:flex-start;flex-direction:column}}
+@media(max-width:520px){.section-visuals{grid-template-columns:1fr}.section-visual:first-child{grid-column:auto}}
+
+</style>
+
+  <meta name="author" content="Chintan Parmar">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#fdfdfc">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chintan Parmar — Content strategist & storyteller">
+  <meta property="og:description" content="Portfolio of Chintan Parmar — content strategy, copywriting, film, digital and creative work.">
+  <meta property="og:image" content="assets/og-preview.svg">
+  <meta property="og:image:alt" content="Chintan Parmar portfolio — content strategist, copywriter and storyteller">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chintan Parmar — Content strategist & storyteller">
+  <meta name="twitter:description" content="Content strategy, copywriting, film, digital and creative work by Chintan Parmar.">
+  <meta name="twitter:image" content="assets/og-preview.svg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Chintan Parmar",
+    "jobTitle":"Content Strategist & Copywriter",
+    "email":"mailto:chintanparmar.2196@gmail.com",
+    "url":"./",
+    "sameAs":["https://www.linkedin.com/in/chintanparmar/"],
+    "knowsAbout":["Content Strategy","Copywriting","SEO","Digital Marketing","Film Production","Video Editing","Creative Direction","AI Workflows"]
+  }
+  </script>
+
+
+<style id="portfolio-icon-overrides">
+.portfolio-icon{
+  width:100%;
+  aspect-ratio: 16 / 9;
+  min-height:220px;
+  border-radius:inherit;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#f4f1eb 0%,#e8e3da 100%);
+  color:#151515;
+  overflow:hidden;
+}
+.portfolio-icon svg{
+  width:82px;
+  height:82px;
+  transition:transform .25s ease;
+}
+a:hover .portfolio-icon svg,
+.portfolio-card:hover .portfolio-icon svg,
+.project-card:hover .portfolio-icon svg{
+  transform:scale(1.06);
+}
+@media (max-width:700px){
+  .portfolio-icon{min-height:180px}
+  .portfolio-icon svg{width:64px;height:64px}
+}
+</style>
+
+<style id="final-icon-style">
+.portfolio-icon-bottom{width:100%;aspect-ratio:16/9;min-height:220px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f4f1eb,#e8e3da);color:#151515;overflow:hidden;border-radius:inherit}
+.portfolio-icon-bottom svg{width:82px;height:82px}
+@media(max-width:700px){.portfolio-icon-bottom{min-height:180px}.portfolio-icon-bottom svg{width:64px;height:64px}}
+</style>
+<style id="verified-portfolio-icons">
+.portfolio-icon-bottom{
+  width:100%;
+  aspect-ratio:16/9;
+  min-height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#f4f1eb 0%,#e8e3da 100%);
+  color:#151515;
+  overflow:hidden;
+}
+.portfolio-icon-bottom svg{width:82px;height:82px}
+@media(max-width:700px){
+  .portfolio-icon-bottom{min-height:180px}
+  .portfolio-icon-bottom svg{width:64px;height:64px}
+}
+</style>
+
+<style id="final-header-colour-fix">
+/* FINAL HEADER COLOUR FIX — preserve layout/content, unify page background */
+html, body {
+  background: #f7f5f0 !important;
+}
+header, nav, .header, .site-header, .navbar, .topbar, .top-bar {
+  background: #f7f5f0 !important;
+  background-color: #f7f5f0 !important;
+  color: #111111 !important;
+}
+header *, nav *, .header *, .site-header *, .navbar *, .topbar *, .top-bar * {
+  color: #111111 !important;
+}
+header a, nav a, .header a, .site-header a, .navbar a, .topbar a, .top-bar a {
+  color: #111111 !important;
+}
+</style>
+</head>
+<body>
+  <header class="site-header" id="header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Chintan Parmar home"><span class="brand-mark">CP</span> Chintan Parmar</a>
+      <div class="nav-links">
+        <a href="#work">Work</a><a href="#about">About</a><a href="#experience">Experience</a>
+      </div>
+      <div class="nav-meta"><span class="time" id="clock">Dublin, IE</span><a class="nav-button" href="#contact">Let’s talk</a></div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero page">
+      <div class="hero-image" role="img" aria-label="Chintan holding a camera on set"></div>
+      <div class="hero-content" data-reveal>
+        <h1>Stories that make people <em>look twice.</em></h1>
+      </div>
+      <div class="hero-bottom" data-reveal>
+        <p>I turn strategy into stories people remember — through copy, film, social, search and the right idea at the right moment.</p>
+      </div>
+    
+
+</section>
+
+    <section class="intro page" id="about" data-reveal>
+      <span class="eyebrow">01 <span class="dot">/</span> About</span>
+      <div class="intro-main">
+        <h2 class="intro-copy">Stories meet Structure.</h2>
+        <p class="intro-body">Five years across film, advertising and IT taught me the same lesson. A story works the same way whether it lives on a billboard or a product listing. I have shaped it for social feeds, brand stores, websites, posts and listings, then carried it further into video, film and script. Fifty plus brands later, the format keeps changing but the goal stays the same. Strategy and content that works for the brands.</p>
+        <div class="intro-stats">
+          <div class="intro-stat"><b>40+ brands</b><span>Content &amp; campaigns</span></div>
+          <div class="intro-stat"><b>5+ years</b><span>Experience</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="work page" id="work" aria-labelledby="work-heading">
+<div class="section-top" data-reveal><div><span class="eyebrow">02 <span class="dot">/</span> Work</span><h2 class="section-title" id="work-heading">Stories across<br>formats.</h2></div><p class="section-copy">Case studies, campaigns, scripts and videos shaped from concept through execution.</p></div>
+<div class="work-category-tiles" data-reveal aria-label="Work categories">
+<a class="work-category-tile" href="case-studies/index.html" aria-label="Case Studies">
+<div class="work-category-tile-image"><div class="portfolio-icon" role="img" aria-label="Case Studies"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="13" width="44" height="38" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M20 13v-3h24v3M18 25h28M20 34h10M20 42h20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><span class="work-category-number">01</span></div>
+<h3>Campaign</h3></a>
+<a class="work-category-tile" href="written-conceptualized-posts/index.html" aria-label="Written &amp; Conceptualized">
+<div class="work-category-tile-image"><div class="portfolio-icon" role="img" aria-label="Brand Scripts"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M16 10h32v44H16z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 19h20M22 28h20M22 37h14M22 46h17" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><span class="work-category-number">02</span></div>
+<h3>Written &amp; Conceptualized</h3></a>
+<a class="work-category-tile" href="commercial-scripts/index.html" aria-label="Commercial Scripts">
+<div class="work-category-tile-image"><div class="portfolio-icon" role="img" aria-label="Commercial Scripts"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="13" y="8" width="38" height="48" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><path d="M21 19h22M21 29h22M21 39h16M21 48h19" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><span class="work-category-number">03</span></div>
+<h3>Commercial Scripts</h3></a>
+<a class="work-category-tile" href="tvc-scripts/index.html" aria-label="TVC (Television Commercial) Scripts">
+<div class="work-category-tile-image"><div class="portfolio-icon" role="img" aria-label="TVC Scripts"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="7" y="14" width="50" height="36" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M27 24l14 8-14 8zM19 56h26" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg></div><span class="work-category-number">04</span></div>
+<h3>TVC Scripts</h3></a>
+<a class="work-category-tile" href="videos/index.html" target="_blank" rel="noopener noreferrer" aria-label="Videos (Conceptualized, Shot &amp; Edited)">
+<div class="work-category-tile-image"><div class="portfolio-icon" role="img" aria-label="Videos"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="17" width="48" height="31" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M21 17l7-8 7 8M42 17l7-8 7 8M27 26l13 6-13 6z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg></div><span class="work-category-number">05</span></div>
+<h3>Conceptualised, Shoot and Edited</h3></a></div>
+<div class="case-study-callout">
+  <p><strong>Want the thinking behind the work?</strong> Explore the two focused campaigns — NOMHERD and the Gujarat voter campaign — each presented as one complete page.</p>
+  <a class="arrow-link" href="case-studies/index.html">View case studies <span class="arrow">↗</span></a>
+</div>
+</section>
+
+    
+
+    <section class="experience page" id="experience">
+      <div class="section-top" data-reveal><div><span class="eyebrow">03 <span class="dot">/</span> Experience</span><h2 class="section-title">Different industries.<br>Same instinct.</h2></div><p class="section-copy">Marketing, advertising, IT, media and hospitality — each role strengthened how I communicate and make things move.</p></div>
+      <div class="experience-list" data-reveal>
+        <article class="role">
+  <div class="role-row">
+    <div class="role-type">IT Operations · Full-time</div>
+    <h3>Staging &amp; Support Agent</h3>
+    <div class="role-period">Macro Evolution, Dublin, Ireland <span class="dot">/</span> Jan 2026 – Present</div>
+    <button class="role-toggle" type="button" aria-expanded="false" aria-label="Expand Staging &amp; Support Agent"><span class="role-icon" aria-hidden="true">+</span></button>
+  </div>
+  <div class="role-detail" aria-hidden="true">
+    <div><ul><li>Process PO (Purchase Orders) and BAU (Business As Usual) orders, ensuring accurate and timely fulfilment</li><li>Assist customers with queries and provide basic technical troubleshooting support</li><li>Maintain and input all operational data across Excel trackers, ensuring accuracy and up-to-date records</li><li>Prepare, configure, and deploy devices to ensure they are ready for end-users and business operations</li><li>Monitor device readiness and compliance, ensuring systems meet organisational and security standards</li><li>Troubleshoot hardware and system-related issues, escalating when necessary to the appropriate teams</li><li>Support onboarding and offboarding by setting up and securing user access and devices</li><li>Maintain clear and accurate documentation for processes, configurations, and support activities</li><li>Collaborate cross-functionally to resolve stakeholder and operational issues in a high-volume environment</li><li>Coordinate onboarding communications and operational support with clear communication workflows</li><li>Work closely with internal teams to ensure smooth handovers and consistent operational support</li><li>Follow established IT, security, and data protection procedures in all support activities</li></ul><p>Tools: Workspace ONE · Unified Endpoint Management · MS Excel · MS Office</p></div>
+  </div>
+</article><article class="role">
+  <div class="role-row">
+    <div class="role-type">Hospitality &amp; Operations · Full-time</div>
+    <h3>Patient Food Catering Assistant</h3>
+    <div class="role-period">Aramark, Dublin, Ireland <span class="dot">/</span> Aug 2025 – Jan 2026</div>
+    <button class="role-toggle" type="button" aria-expanded="false" aria-label="Expand Patient Food Catering Assistant"><span class="role-icon" aria-hidden="true">+</span></button>
+  </div>
+  <div class="role-detail" aria-hidden="true">
+    <div><ul><li>Delivered meals to patients following HACCP hygiene standards and standard operating procedures</li><li>Assisted with menu selection and dietary requirements including allergies and modified diets</li><li>Monitored dietary restrictions, allergen details, and completed food safety records</li><li>Supported stock rotation (FIFO), waste management, and inventory control</li><li>Coordinated with kitchen staff to maintain smooth and efficient service during busy periods</li></ul><p>Tools: MS Office</p></div>
+  </div>
+</article><article class="role">
+  <div class="role-row">
+    <div class="role-type">Marketing &amp; Content · Full-time</div>
+    <h3>Junior Copywriter</h3>
+    <div class="role-period">Cavitak Marketing Pvt. Ltd., Gujarat, India <span class="dot">/</span> Aug 2021 – Jan 2024</div>
+    <button class="role-toggle" type="button" aria-expanded="false" aria-label="Expand Junior Copywriter"><span class="role-icon" aria-hidden="true">+</span></button>
+  </div>
+  <div class="role-detail" aria-hidden="true">
+    <div><ul><li>Created and managed content calendars and full content strategies for 40+ brands across social, digital, and web platforms</li><li>Wrote B2B and B2C content across all formats — web copy, landing pages, microsites, blogs, articles, and website content</li><li>Wrote for SaaS products — created user manuals, instruction guides, onboarding documentation, and how-to video scripts</li><li>Produced email marketing copy, LinkedIn marketing content, Meta ads, and Google ads</li><li>Wrote product listings and campaign copy for Flipkart and Amazon — e-commerce writing and marketplace SEO</li><li>Applied SEO best practices across all written content to improve search visibility and organic reach</li><li>Wrote social media copies, captions, and campaign content across Instagram, Facebook, and LinkedIn</li><li>Developed newsletter content and internal communication copy for multiple client brands</li><li>Created scripts for YouTube tutorials, how-to videos, and promotional video ads</li><li>Designed social media creatives and visual assets using Canva</li><li>Edited video content using Adobe Premiere Pro for social media and promotional campaigns</li><li>Collaborated with designers, video teams, and developers to deliver end-to-end marketing campaigns</li><li>Conducted audience research, competitor analysis, and trend tracking to inform content strategy</li><li>Supported performance reporting and basic analytics to optimise future campaigns</li></ul><p>Tools: WordPress · Canva · Adobe Premiere Pro · CMS · MS Office · SEO Tools · Basic Analytics</p></div>
+  </div>
+</article><article class="role">
+  <div class="role-row">
+    <div class="role-type">Content Strategy · Freelance</div>
+    <h3>Freelance Content Strategist</h3>
+    <div class="role-period">Taxon Infotech &amp; NOMHERD Apparels, India <span class="dot">/</span> Feb 2022 – May 2024</div>
+    <button class="role-toggle" type="button" aria-expanded="false" aria-label="Expand Freelance Content Strategist"><span class="role-icon" aria-hidden="true">+</span></button>
+  </div>
+  <div class="role-detail" aria-hidden="true">
+    <div><ul><li>Planned and executed content strategies for fashion and digital brand campaigns across social media and online platforms</li><li>Developed SEO-aligned website copy, campaign messaging, and blog content to strengthen digital brand presence</li><li>Supported audience engagement initiatives through content planning and digital communication strategies</li><li>Delivered blogs, website content, and brand storytelling aligned with SEO and communication goals</li><li>Supported WordPress-based content implementation and basic website updates</li><li>Planned and launched full brand strategy for fashion label 'NOMHERD' — messaging, social content, and storytelling from scratch</li></ul><p>Tools: WordPress · Wix · Canva · SEO Tools · Adobe Premiere Pro · CapCut</p></div>
+  </div>
+</article><article class="role">
+  <div class="role-row">
+    <div class="role-type">Film &amp; Production · Freelance</div>
+    <h3>Assistant Cinematographer</h3>
+    <div class="role-period">Freelance, India <span class="dot">/</span> Aug 2021 – Jan 2024</div>
+    <button class="role-toggle" type="button" aria-expanded="false" aria-label="Expand Assistant Cinematographer"><span class="role-icon" aria-hidden="true">+</span></button>
+  </div>
+  <div class="role-detail" aria-hidden="true">
+    <div><ul><li>Set up and operated camera and lighting equipment for studio and on-location shoots</li><li>Planned shot lists, storyboards, and scene compositions alongside the lead cinematographer</li><li>Conducted equipment checks, troubleshooting, and maintenance to avoid delays during filming</li><li>Coordinated with directors and production crews to meet daily schedules and creative requirements</li><li>Prepared lighting diagrams and supported quick lighting changes during shoots to maintain visual quality</li></ul><p>Tools: Adobe Premiere Pro · CapCut</p></div>
+  </div>
+</article><article class="role">
+  <div class="role-row">
+    <div class="role-type">Marketing &amp; Content · Full-time</div>
+    <h3>Creative Copywriter</h3>
+    <div class="role-period">Aum Advertising &amp; Marketing, India <span class="dot">/</span> Dec 2020 – Aug 2021</div>
+    <button class="role-toggle" type="button" aria-expanded="false" aria-label="Expand Creative Copywriter"><span class="role-icon" aria-hidden="true">+</span></button>
+  </div>
+  <div class="role-detail" aria-hidden="true">
+    <div><ul><li>Built content strategies and managed content calendars for multiple brand campaigns</li><li>Wrote social media copies, captions, and campaign content across Instagram, Facebook, and LinkedIn</li><li>Created leaflet copy, banner copy, and print ad content for offline marketing campaigns</li><li>Wrote newspaper advertisements and outdoor/print campaign messaging</li><li>Produced blog content, website copy, and newsletter content for client brands</li><li>Wrote video ad scripts and social media video content for promotional campaigns</li><li>Planned and managed influencer marketing campaigns — improved local brand visibility and retail footfall</li><li>Developed social media campaign strategies aligned with client goals and target audiences</li><li>Designed social media creatives and visual assets using Canva</li><li>Edited short promotional and social media videos using Adobe Premiere Pro</li><li>Prepared and delivered client pitches and campaign proposals</li><li>Handled client communication as a client-facing point of contact throughout projects</li><li>Managed content scheduling and publishing across digital platforms</li></ul><p>Tools: Canva · Adobe Premiere Pro · CMS · MS Office</p></div>
+  </div>
+</article><article class="role">
+  <div class="role-row">
+    <div class="role-type">Media &amp; Content · Internship</div>
+    <h3>Content Intern</h3>
+    <div class="role-period">IN10 Media Pvt. Ltd., India <span class="dot">/</span> Feb 2020 – May 2020</div>
+    <button class="role-toggle" type="button" aria-expanded="false" aria-label="Expand Content Intern"><span class="role-icon" aria-hidden="true">+</span></button>
+  </div>
+  <div class="role-detail" aria-hidden="true">
+    <div><ul><li>Supported content research and development for television and digital media projects</li><li>Prepared briefs, reference notes, and research documents for TV and digital content teams</li><li>Assisted with content organisation, documentation, and production workflow</li><li>Supported accuracy checks and information verification for new projects</li><li>Gained exposure to editorial planning, content workflows, and media production processes</li></ul><p>Tools: MS Office</p></div>
+  </div>
+</article><article class="role">
+  <div class="role-row">
+    <div class="role-type">Customer Support · Full-time</div>
+    <h3>Customer Experience Specialist</h3>
+    <div class="role-period">Etech Global Services, India <span class="dot">/</span> Sep 2017 – Aug 2018</div>
+    <button class="role-toggle" type="button" aria-expanded="false" aria-label="Expand Customer Experience Specialist"><span class="role-icon" aria-hidden="true">+</span></button>
+  </div>
+  <div class="role-detail" aria-hidden="true">
+    <div><ul><li>Managed up to 3 simultaneous live chats with high accuracy and customer satisfaction scores</li><li>Assisted customers with technical troubleshooting, account setup, billing queries, and plan upgrades</li><li>Performed upselling and cross-selling based on customer needs and service requirements</li><li>Explained complex technical instructions in accessible, simple language to reduce repeat queries</li></ul><p>Tools: CRM Systems · MS Office</p></div>
+  </div>
+</article>
+      </div>
+    </section>
+
+    <section class="tools-showcase page" id="tools">
+      <div class="section-top" data-reveal><div><span class="eyebrow">04 <span class="dot">/</span> Software &amp; Tools</span><h2 class="section-title">The tools<br>I work with.</h2></div><p class="section-copy">A practical stack across productivity, design, video, web, marketing, IT operations, analytics, CRM and AI workflows.</p></div>
+      <div class="tools-list" data-reveal>
+        <div class="tool-group"><span>01</span><div><h3>Productivity</h3><p>Microsoft Office Suite (Word, Excel, PowerPoint, Outlook) · Microsoft Teams · SharePoint · Microsoft 365</p></div></div>
+        <div class="tool-group"><span>02</span><div><h3>Design</h3><p>Canva · Adobe Photoshop</p></div></div>
+        <div class="tool-group"><span>03</span><div><h3>Video</h3><p>Adobe Premiere Pro · CapCut</p></div></div>
+        <div class="tool-group"><span>04</span><div><h3>Web &amp; CMS</h3><p>WordPress · Wix · CMS Platforms · WooCommerce</p></div></div>
+        <div class="tool-group"><span>05</span><div><h3>Marketing &amp; Analytics</h3><p>SEO Tools · Google Ads · Meta Ads · Meta Business Suite · Google Analytics (Basic) · HubSpot · Mailchimp</p></div></div>
+        <div class="tool-group"><span>06</span><div><h3>IT &amp; Operations</h3><p>Workspace ONE · Unified Endpoint Management · Jira · Power BI (Basic) · CRM Systems</p></div></div>
+        <div class="tool-group"><span>07</span><div><h3>AI &amp; Automation</h3><p>ChatGPT · Claude · Claude Code · Google Gemini · Make · n8n · MCP Integrations · API Access &amp; Key Management</p></div></div>
+      </div>
+    </section>
+
+    <section class="credentials page" data-reveal>
+      <div class="section-top"><div><span class="eyebrow">05 <span class="dot">/</span> Education &amp; certification</span><h2 class="section-title">Built on<br>curiosity.</h2></div></div>
+      <div class="credential-list">
+        <article class="credential"><span class="credential-type">Master’s degree</span><h3>MA, Film Studies</h3><span class="credential-meta">University of Galway <span class="dot">/</span> 2024—2025</span></article>
+        <article class="credential"><span class="credential-type">Master’s degree</span><h3>Journalism & Mass Communication</h3><span class="credential-meta">MS University <span class="dot">/</span> 2018—2020</span></article>
+        <article class="credential"><span class="credential-type">Certificate</span><h3>Google Digital Garage</h3><span class="credential-meta">Digital marketing</span></article>
+      </div>
+    </section>
+
+    <section class="contact page" id="contact" data-reveal>
+      <span class="eyebrow">06 <span class="dot">/</span> Contact</span>
+      <h2>Got something <em>worth holding</em> attention for?</h2>
+      <div class="contact-bottom"><p>Dublin 12, Ireland<br>Eligible to work in Ireland.</p><div class="contact-actions"><a class="email-icon-link" href="mailto:chintanparmar.2196@gmail.com" aria-label="Email Chintan Parmar"><svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M2.5 5.5h19A1.5 1.5 0 0 1 23 7v10a1.5 1.5 0 0 1-1.5 1.5h-19A1.5 1.5 0 0 1 1 17V7a1.5 1.5 0 0 1 1.5-1.5Zm0 2.2v.2l9.5 6.4 9.5-6.4v-.2h-19Zm19 2.9-8.66 5.84a1.5 1.5 0 0 1-1.68 0L2.5 10.6V17h19v-6.4Z"/>
+</svg></a><a class="linkedin-link" href="https://www.linkedin.com/in/chintanparmar" target="_blank" rel="noreferrer" aria-label="Chintan Parmar on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.86-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.33V8.99h3.42v1.57h.05c.48-.9 1.64-1.86 3.37-1.86 3.6 0 4.27 2.37 4.27 5.46v6.29zM5.31 7.42a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zm1.78 13.03H3.53V8.99h3.56v11.46zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg></a></div></div>
+    </section>
+  </main>
+
+  <footer class="footer page"><p>© <span id="year">2026</span> Chintan Parmar</p><p>Dublin 12, Ireland <span class="dot">/</span> Available worldwide</p></footer>
+  <script>
+    const header = document.querySelector('#header');
+    const clock = document.querySelector('#clock');
+    const updateClock = () => { clock.textContent = new Intl.DateTimeFormat('en-IE', { timeZone: 'Europe/Dublin', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()) + ' Dublin 12'; };
+    updateClock(); setInterval(updateClock, 30000);
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
+    document.querySelector('#year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: .12 });
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+document.querySelectorAll('.role').forEach(role => {
+      const toggle = role.querySelector('.role-toggle');
+      const detail = role.querySelector('.role-detail');
+      if (!toggle || !detail) return;
+
+      role.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      detail.setAttribute('aria-hidden', 'true');
+
+      toggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const opening = !role.classList.contains('open');
+
+        document.querySelectorAll('.role.open').forEach(other => {
+          if (other !== role) {
+            other.classList.remove('open');
+            const otherButton = other.querySelector('.role-toggle');
+            const otherDetail = other.querySelector('.role-detail');
+            if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
+            if (otherDetail) otherDetail.setAttribute('aria-hidden', 'true');
+          }
+        });
+
+        role.classList.toggle('open', opening);
+        toggle.setAttribute('aria-expanded', String(opening));
+        detail.setAttribute('aria-hidden', String(!opening));
+      });
+    });
+  </script>
+<a href="../index.html" class="back-to-portfolio">Back to portfolio</a>
+</body>
+</html>

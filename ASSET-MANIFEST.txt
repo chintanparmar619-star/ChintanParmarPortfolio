@@ -1,0 +1,23 @@
+PORTFOLIO ASSET MANIFEST
+
+This build was created from the files available in the current chat plus the verified continuation brief.
+
+Present in this package:
+- index.html
+- case-studies/index.html
+- case-studies/nomherd.html
+- case-studies/gujarat-elections-2022.html
+- written-conceptualized-posts/index.html
+- commercial-scripts/index.html
+- tvc-scripts/index.html
+- videos/index.html
+- Chintan_Parmar_Resume.pdf
+- assets/og-preview.svg
+
+Referenced but NOT present in the current upload:
+- 29 written/conceptualized image files listed on the Written & Conceptualized page
+- 7 script PDFs listed in Commercial/TVC Scripts
+- 4 video files listed in Videos
+- original voter campaign image assets
+
+The HTML structure and verified filenames are preserved so the source media can be dropped into the relevant folders later without changing the navigation architecture.
